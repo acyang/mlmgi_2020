@@ -31,4 +31,10 @@ plt.plot(X_grid, regressor.predict(X_grid), color='blue')
 plt.title('Random Forest Regression')
 plt.xlabel('Density [eV]')
 plt.ylabel('Band Gap [eV]')
+
+#density of MoS2 : 5.06 g/cm³
+test = np.array([5.06]).reshape(len(test), 1)
+print("The caculated bandgap is: 1.8eV", )
+print("The predictive bandgap is: ",regressor.predict(test))
+plt.scatter(test, regressor.predict(test), marker='^', color='green')
 plt.show()
